@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starwars: A New Hope</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>A New Hope</h1>
+    <p>release date: <span id="releaseDate"></span></p>
+    <p>directed by: <span id="director"></span></p>
+    <p>produced by: <span id="producer"></span></p>
+    <p>main characters: <span id="characters"></span></p>
+    <script>
+      let url = "https://swapi.dev/api/films/1/";
+      axios.get(url).then(displayInfo);
+
+      function displayInfo(response) {
+        console.log(response);
+        let releaseDate = response.data.release_date;
+        let director = response.data.director;
+        let producer = response.data.producer;
+        let characters = response.data.characters;
+
+        let releaseDateElement = document.querySelector("#releaseDate");
+        releaseDateElement.innerHTML = `${releaseDate}`;
+        let directorElement = document.querySelector("#director");
+        directorElement.innerHTML = `${director}`;
+        let producerElement = document.querySelector("#producer");
+        producerElement.innerHTML = `${producer}`;
+        let charactersElement = document.querySelector("#characters");
+        charactersElement.innerHTML = `${characters}`;
+      }
+    </script>
+  </body>
+</html>
