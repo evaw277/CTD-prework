@@ -12,10 +12,44 @@
   <body>
     <div class="container">
       <h1>Star Wars</h1>
-      <h2>A (very) short guide to the Galaxy</h2>
-      <a href="people.html">See people</a>
-      <a href="films.html">See films</a>
+      <h2 id="personName">All about Luke Skywalker</h2>
+      <p>hair color: <span id="hairColor"></span></p>
+      <p>eye color: <span id="eyeColor"></span></p>
+      <p>height: <span id="height"></span></p>
+      <p>birth year: <span id="birthYear"></span></p>
+      <p>films: <span id="filmsLength"></span></p>
+
+      <a href="/" id="displayFilms"></a>
     </div>
-    <script></script>
+    <script>
+      let url = "https://swapi.dev/api/people/1/";
+      axios.get(url).then(characterInfo);
+
+      function characterInfo(response) {
+        console.log(response.data.films[0]);
+        let characterName = response.data.name;
+        let hairColor = response.data.hair_color;
+        let eyeColor = response.data.eye_color;
+        let height = response.data.height;
+        let birthYear = response.data.birth_year;
+        let filmsLength = response.data.films.length;
+        let displayFilms = response.data.films;
+
+        let characterNameElement = document.querySelector("#personName");
+        characterNameElement.innerHTML = `All about ${characterName}`;
+        let hairColorElement = document.querySelector("#hairColor");
+        hairColorElement.innerHTML = `${hairColor}`;
+        let eyeColorElement = document.querySelector("#eyeColor");
+        eyeColorElement.innerHTML = `${eyeColor}`;
+        let heightElement = document.querySelector("#height");
+        heightElement.innerHTML = `${height}`;
+        let birthYearElement = document.querySelector("#birthYear");
+        birthYearElement.innerHTML = `${birthYear}`;
+        let filmsLengthElement = document.querySelector("#filmsLength");
+        filmsLengthElement.innerHTML = `${filmsLength}`;
+        let displayFilmsElement = document.querySelector("#displayFilms");
+        displayFilmsElement.innerHTML = `${displayFilms}`;
+      }
+    </script>
   </body>
 </html>
