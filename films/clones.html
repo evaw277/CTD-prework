@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Starwars: A New Hope</title>
+    <title>Starwars: Attack of the Clones</title>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
@@ -14,22 +14,22 @@
     <p>produced by: <span id="producer"></span></p>
     <p>
       main characters:
-      <a href="/">Luke Skywalker,</a>
-      <a href="../characters/c-3po.html">C-3PO,</a>
-      <a href="../characters/r2-d2.html">R2-D2,</a>
-      <a href="../characters/vader.html">Darth Vader,</a>
-      <a href="../characters/leia.html">Leia Organa</a>
+      <a href="/characters/c-3po.html">C-3PO,</a>
+      <a href="/characters/r2-d2.html">R2-D2,</a>
+      <a href="/characters/owen.html">Owen Lars,</a>
+      <a href="/characters/obi.html">Obi-Wan Kenobi,</a>
+      <a href="/characters/anakin.html">Anakin Skywalker</a>
     </p>
     <script>
-      let url = "https://swapi.dev/api/films/1/";
+      let url = "https://swapi.dev/api/films/5/";
       axios.get(url).then(displayInfo);
 
       function displayInfo(response) {
         console.log(response);
+        let title = response.data.title;
         let releaseDate = response.data.release_date;
         let director = response.data.director;
         let producer = response.data.producer;
-        let title = response.data.title;
 
         let titleElement = document.querySelector("#title");
         titleElement.innerHTML = `${title}`;

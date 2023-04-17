@@ -19,17 +19,16 @@
       <p>birth year: <span id="birthYear"></span></p>
       <p>films: <span id="filmsLength"></span></p>
 
-      <a href="films/hope.html">A New Hope</a>
-      <a href="films/empire.html">The Empire Strikes Back</a>
-      <a href="films/jedi.html">Return of the Jedi</a>
-      <a href="films/sith.html">Revenge of the Sith</a>
+      <a href="films/hope.html">A New Hope: 1977,</a>
+      <a href="films/empire.html">The Empire Strikes Back: 1980,</a>
+      <a href="films/jedi.html">Return of the Jedi: 1983,</a>
+      <a href="films/sith.html">Revenge of the Sith: 2005</a>
     </div>
     <script>
       let url = "https://swapi.dev/api/people/1/";
       axios.get(url).then(characterInfo);
 
       function characterInfo(response) {
-        console.log(response.data.films[3]);
         let characterName = response.data.name;
         let hairColor = response.data.hair_color;
         let eyeColor = response.data.eye_color;
