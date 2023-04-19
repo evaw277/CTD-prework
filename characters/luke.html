@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Star Wars Info</title>
 
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
+    <a href="/index.html">back to homepage</a>
     <div class="container">
       <h1>Star Wars</h1>
       <h2 id="personName">All about Luke Skywalker</h2>
@@ -18,13 +19,15 @@
       <p>height: <span id="height"></span></p>
       <p>birth year: <span id="birthYear"></span></p>
       <p>films: <span id="filmsLength"></span></p>
-
-      <a href="films/hope.html">A New Hope: 1977,</a>
-      <a href="films/empire.html">The Empire Strikes Back: 1980,</a>
-      <a href="films/jedi.html">Return of the Jedi: 1983,</a>
-      <a href="films/sith.html">Revenge of the Sith: 2005</a>
-      <img src="images/Luke Skywalker.jpg" alt="Luke Skywalker" />
+      <div>
+        <a href="../films/hope.html">A New Hope: 1977,</a>
+        <a href="../films/empire.html">The Empire Strikes Back: 1980,</a>
+        <a href="../films/jedi.html">Return of the Jedi: 1983,</a>
+        <a href="../films/sith.html">Revenge of the Sith: 2005</a>
+      </div>
+      <img src="../images/Luke Skywalker.jpg" alt="Luke Skywalker" />
     </div>
+
     <script>
       let url = "https://swapi.dev/api/people/1/";
       axios.get(url).then(characterInfo);

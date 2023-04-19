@@ -4,22 +4,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Starwars: Attack of the Clones</title>
+    <link rel="stylesheet" href="../styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
-    <h1>Star Wars: Films</h1>
-    <h2 id="title"></h2>
-    <p>release date: <span id="releaseDate"></span></p>
-    <p>directed by: <span id="director"></span></p>
-    <p>produced by: <span id="producer"></span></p>
-    <p>
-      main characters:
-      <a href="../characters/c-3po.html">C-3PO,</a>
-      <a href="../characters/r2-d2.html">R2-D2,</a>
-      <a href="../characters/owen.html">Owen Lars,</a>
-      <a href="../characters/obi.html">Obi-Wan Kenobi,</a>
-      <a href="../characters/anakin.html">Anakin Skywalker</a>
-    </p>
+    <a href="/index.html">back to homepage</a>
+    <div class="container">
+      <h1>Star Wars: Films</h1>
+      <h2 id="title"></h2>
+      <p>release date: <span id="releaseDate"></span></p>
+      <p>directed by: <span id="director"></span></p>
+      <p>produced by: <span id="producer"></span></p>
+      <p>
+        main characters:
+        <a href="../characters/c-3po.html">C-3PO,</a>
+        <a href="../characters/r2-d2.html">R2-D2,</a>
+        <a href="../characters/owen.html">Owen Lars,</a>
+        <a href="../characters/obi.html">Obi-Wan Kenobi,</a>
+        <a href="../characters/anakin.html">Anakin Skywalker</a>
+      </p>
+      <img src="../images/clones.jpg" alt="" />
+    </div>
     <script>
       let url = "https://swapi.dev/api/films/5/";
       axios.get(url).then(displayInfo);
