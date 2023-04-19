@@ -11,44 +11,24 @@
   </head>
   <body>
     <div class="container">
-      <h1>Star Wars</h1>
-      <h2 id="personName">All about Luke Skywalker</h2>
-      <p>hair color: <span id="hairColor"></span></p>
-      <p>eye color: <span id="eyeColor"></span></p>
-      <p>height: <span id="height"></span></p>
-      <p>birth year: <span id="birthYear"></span></p>
-      <p>films: <span id="filmsLength"></span></p>
+      <h1>WELCOME!</h1>
+      <h2>to a mini reference guide of Star Wars!</h2>
 
-      <a href="films/hope.html">A New Hope: 1977,</a>
-      <a href="films/empire.html">The Empire Strikes Back: 1980,</a>
-      <a href="films/jedi.html">Return of the Jedi: 1983,</a>
-      <a href="films/sith.html">Revenge of the Sith: 2005</a>
+      <a href="">characters</a>
+      <a href="">films</a>
+      <div class="secret">
+        <a href="/" id="secretmessage">click here for a secret</a>
+      </div>
     </div>
+
     <script>
-      let url = "https://swapi.dev/api/people/1/";
-      axios.get(url).then(characterInfo);
+      let secret = document.querySelector("#secretmessage");
+      secret.addEventListener("click", secretAlert);
 
-      function characterInfo(response) {
-        let characterName = response.data.name;
-        let hairColor = response.data.hair_color;
-        let eyeColor = response.data.eye_color;
-        let height = response.data.height;
-        let birthYear = response.data.birth_year;
-        let filmsLength = response.data.films.length;
-        let displayFilms = response.data.films;
-
-        let characterNameElement = document.querySelector("#personName");
-        characterNameElement.innerHTML = `All about ${characterName}`;
-        let hairColorElement = document.querySelector("#hairColor");
-        hairColorElement.innerHTML = `${hairColor}`;
-        let eyeColorElement = document.querySelector("#eyeColor");
-        eyeColorElement.innerHTML = `${eyeColor}`;
-        let heightElement = document.querySelector("#height");
-        heightElement.innerHTML = `${height}`;
-        let birthYearElement = document.querySelector("#birthYear");
-        birthYearElement.innerHTML = `${birthYear}`;
-        let filmsLengthElement = document.querySelector("#filmsLength");
-        filmsLengthElement.innerHTML = `${filmsLength}`;
+      function secretAlert(event) {
+        alert(
+          "I've never seen any of the Star Wars movies and I feel like it's too late to start."
+        );
       }
     </script>
   </body>
