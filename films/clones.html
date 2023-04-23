@@ -12,6 +12,7 @@
     <div class="container">
       <h1>Star Wars: Films</h1>
       <h2 id="title"></h2>
+      <strong id="openingCrawl"></strong>
       <p>release date: <span id="releaseDate"></span></p>
       <p>directed by: <span id="director"></span></p>
       <p>produced by: <span id="producer"></span></p>
@@ -30,11 +31,11 @@
       axios.get(url).then(displayInfo);
 
       function displayInfo(response) {
-        console.log(response);
         let title = response.data.title;
         let releaseDate = response.data.release_date;
         let director = response.data.director;
         let producer = response.data.producer;
+        let openingCrawl = response.data.opening_crawl;
 
         let titleElement = document.querySelector("#title");
         titleElement.innerHTML = `${title}`;
@@ -44,6 +45,8 @@
         directorElement.innerHTML = `${director}`;
         let producerElement = document.querySelector("#producer");
         producerElement.innerHTML = `${producer}`;
+        let openingCrawlElement = document.querySelector("#openingCrawl");
+        openingCrawlElement.innerHTML = `${openingCrawl}`;
       }
     </script>
   </body>

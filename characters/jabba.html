@@ -31,7 +31,6 @@
       axios.get(url).then(characterInfo);
 
       function characterInfo(response) {
-        console.log(response);
         let characterName = response.data.name;
         let hairColor = response.data.hair_color;
         let eyeColor = response.data.eye_color;
